@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+/* Top space for navbar */
+main {
+  padding-top: 80px;
+}
+
+/* Section general */
+.eventos {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 40px 80px;
+}
+
+/* Each event block */
+.evento {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: #000;
+}
+
+/* Image */
+.evento img {
+  width: 350px;
+  height: 230px;
+  object-fit: cover;
+  border: 3px solid #ff0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+}
+
+/* Text */
+.evento .texto {
+  max-width: 600px;
+}
+
+.evento h2 {
+  background-color: #ff0000;
+  padding: 10px 15px;
+  margin: 0 0 15px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.evento p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .eventos {
+    padding: 20px;
+  }
+
+  .evento {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .evento.inverso {
+    flex-direction: column;
+  }
+
+  .evento img {
+    width: 100%;
+    height: auto;
+  }
+
+  .evento h2 {
+    font-size: 1.2rem;
+  }
+}

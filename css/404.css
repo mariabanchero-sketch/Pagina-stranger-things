@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: #000;
+  overflow: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 🔥 Background blurred Stranger Things image */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../imagenes/logosinfondo.png') center center no-repeat;
+  background-size: cover; /* fills entire screen */
+  filter: blur(20px) brightness(0.7) contrast(1.2) saturate(1.2);
+  transform: scale(1.1);
+  opacity: 0.5;
+  z-index: -2;
+}
+
+/* body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.8) 80%);
+  z-index: -1;
+} */
+
+/* 🔺 Red header bar */
+header {
+  background-color: #ff0000;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+}
+
+/* 🔳 Center error box */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  position: relative;
+  z-index: 1;
+}
+
+.error-container {
+  background: linear-gradient(180deg, rgba(255,0,0,0.9) 0%, rgba(140,0,0,0.9) 100%);
+  padding: 40px 70px;
+  border-radius: 40px;
+  text-align: center;
+  max-width: 550px;
+  box-shadow: 0 0 60px rgba(255, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  animation: glowPulse 4s infinite ease-in-out;
+}
+
+/* 💡 Neon pulse */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 45px rgba(255, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 80px rgba(255, 0, 0, 0.9); }
+}
+
+/* 🔢 404 text */
+.error-container h2 {
+  font-size: 6.5rem;
+  margin: 0;
+  color: #000;
+  font-weight: 900;
+  text-shadow: 0 0 15px rgba(255,0,0,0.4);
+  animation: flicker 3s infinite;
+}
+
+/* ✨ Neon flicker animation */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.3; }
+}
+
+.error-container h3 {
+  font-size: 1.6rem;
+  margin-top: -10px;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.error-container .subtitle {
+  margin-top: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.error-container p {
+  margin: 10px 0;
+  color: #f2f2f2;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 35px;
+  background-color: #1a0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.button:hover {
+  background-color: #000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+}

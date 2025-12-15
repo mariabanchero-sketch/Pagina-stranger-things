@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+/* 🔺 Header */
+header {
+  background-color: #ff0000;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+/* 🔻 Main section */
+main {
+  padding: 50px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.temporadas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1400px;
+}
+
+/* 🔸 Each card */
+.temporada {
+  text-align: center;
+  width: 250px;
+}
+
+.temporada h2 {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.temporada img {
+  width: 100%;
+  height: 380px;              /* 🔹 sets a consistent height for all posters */
+  object-fit: cover;          /* 🔹 ensures no distortion */
+  border-radius: 5px;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.temporada img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+}
+
+
+.temporada h3 {
+  font-size: 1rem;
+  color: #ff0000;
+  margin: 15px 0 10px;
+}
+
+.temporada p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ddd;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+/* 🔘 Responsive */
+@media (max-width: 768px) {
+  .temporadas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .temporada {
+    width: 80%;
+  }
+}

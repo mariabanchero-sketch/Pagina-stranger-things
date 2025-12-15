@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start; /* logo left, menu right */
+  align-items: center;
+  position: relative;
+}
+
+.navbar h1 img {
+  width: 80px;
+}
+
+/* Hide default checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger button */
+.menu-icon {
+  display: flex;          
+  cursor: pointer;
+  flex-direction: column;
+  z-index: 2001;          /* above drawer */
+  margin-left: 0;      /* push it to the right */
+  margin-right: 20px;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px;
+  transition: 0.3s;
+}
+
+/* Side drawer menu (OVERLAY from LEFT) */
+.nav-links {
+  flex-direction: column;
+  background: #000;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100%;
+  padding: 60px 20px;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  gap: 20px;
+  z-index: 2000;          /* overlays content */
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Show drawer when checkbox is checked */
+#menu-toggle:checked + .menu-icon + .nav-links {
+  left: 0;               /* slide in from right */
+}
+
+.logo-img {
+  max-width: 200px;   /* controls size */
+  height: auto;       /* keeps proportions */
+  display: block;
+  margin: 20px auto;  /* center horizontally */
+}
+
+
+body {
+  margin: 0;    
+  padding: 0 20px; /* ⬅️ horizontal padding (left & right) */
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+}
+
