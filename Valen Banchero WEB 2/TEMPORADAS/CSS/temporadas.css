@@ -1,62 +1,104 @@
-#temporadas {
-  padding: 60px 20px;
-  background-color: #0d0d0d;
-  color: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+/* 🔺 Header */
+header {
+  background-color: #ff0000;
   text-align: center;
+  padding: 20px 0;
 }
 
-#temporadas h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #e50914;
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-weight: 900;
 }
 
-.galeria-temporadas {
+/* 🔻 Main section */
+main {
+  padding: 50px 40px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
 }
 
-.temporada {
-  flex: 1 1 250px; /* mínimo 250px por tarjeta */
-  max-width: 300px;
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.temporadas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1400px;
 }
 
-.temporada:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+/* 🔸 Each card */
+.temporada {
+  text-align: center;
+  width: 250px;
+
+  /* 🔥 Animación fade-in */
+  opacity: 0;
+  transform: translateY(25px);
+  animation: aparecer 0.9s ease-out forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.temporada h2 {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .temporada img {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  height: 380px;              /* 🔹 sets a consistent height for all posters */
+  object-fit: cover;          /* 🔹 ensures no distortion */
+  border-radius: 5px;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.temporada img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+}
+
+
 .temporada h3 {
-  color: #e50914;
-  margin-bottom: 10px;
-  font-size: 1.3em;
+  font-size: 1rem;
+  color: #ff0000;
+  margin: 15px 0 10px;
 }
 
 .temporada p {
-  font-size: 0.95em;
+  font-size: 0.9rem;
   line-height: 1.5;
-  color: #ccc;
-}
-.temporada h3 {
-  color: #e50914;
-  margin-bottom: 10px;
-  font-size: 1.3em;
+  color: #ddd;
+  max-width: 250px;
+  margin: 0 auto;
 }
 
-.temporada p {
-  font-size: 0.95em;
-  line-height: 1.5;
-  color: #ccc;
+/* 🔘 Responsive */
+@media (max-width: 768px) {
+  .temporadas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .temporada {
+    width: 80%;
+  }
 }
