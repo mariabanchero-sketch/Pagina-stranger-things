@@ -7,6 +7,7 @@ body {
   color: white;
 }
 
+/* 🔺 Header */
 header {
   background-color: #ff0000;
   text-align: center;
@@ -20,6 +21,7 @@ header h1 {
   font-weight: 900;
 }
 
+/* 🔻 Main section */
 main {
   padding: 50px 40px;
   display: flex;
@@ -34,9 +36,22 @@ main {
   max-width: 1400px;
 }
 
+/* 🔸 Each card */
 .temporada {
   text-align: center;
   width: 250px;
+
+  /* 🔥 Animación fade-in */
+  opacity: 0;
+  transform: translateY(25px);
+  animation: aparecer 0.9s ease-out forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .temporada h2 {
@@ -76,6 +91,7 @@ main {
   margin: 0 auto;
 }
 
+/* 🔘 Responsive */
 @media (max-width: 768px) {
   .temporadas {
     flex-direction: column;
