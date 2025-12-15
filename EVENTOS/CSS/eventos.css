@@ -1,5 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+/* ANIMACIÓN DEL BODY (si en tu HTML activás .visible) */
+body.eventos-page {
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
 
+body.eventos-page.visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.eventos-page,
+  body.eventos-page.visible {
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* RESET Y BASE */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -7,12 +24,11 @@ body {
   color: white;
 }
 
-/* Top space for navbar */
+/* Espacio para navbar */
 main {
   padding-top: 80px;
 }
 
-/* Section general */
 .eventos {
   display: flex;
   flex-direction: column;
@@ -20,7 +36,6 @@ main {
   padding: 40px 80px;
 }
 
-/* Each event block */
 .evento {
   display: flex;
   align-items: center;
@@ -28,16 +43,31 @@ main {
   background-color: #000;
 }
 
-/* Image */
+/* ===================================== */
+/*       ANIMACIÓN SUAVE EN FOTOS        */
+/* ===================================== */
 .evento img {
   width: 350px;
   height: 230px;
   object-fit: cover;
   border: 3px solid #ff0000;
   box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+
+  /* Animación */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 0.9s ease-out forwards;
 }
 
-/* Text */
+/* Keyframes de aparición */
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TEXTO */
 .evento .texto {
   max-width: 600px;
 }
@@ -57,7 +87,9 @@ main {
   color: #ddd;
 }
 
-/* Responsive */
+/* ===================================== */
+/*                MOBILE                 */
+/* ===================================== */
 @media (max-width: 768px) {
   .eventos {
     padding: 20px;
